@@ -1,0 +1,43 @@
+
+// Colours
+
+$clr-main: hsl(180, 40%, 49%);
+$clr-primary: hsl(229, 25%, 49%);
+$clr-secondary: hsl(182, 100%, 10%);
+$clr-accent: hsl(27, 100%, 91%);
+$clr-light: hsl(0, 0%, 71%);
+$clr-dark: hsl(0, 0%, 20%);
+
+html[data-theme='light'] {
+    --clr-light: #{$clr-light};
+    --clr-dark: #{$clr-dark};
+    --clr-main: #{$clr-main};
+    --clr-primary: #{$clr-primary};
+    --clr-secondary: #{$clr-secondary};
+    --clr-accent: #{$clr-accent};
+
+    --foreground: var(--clr-dark);
+    --background: var(--clr-light);
+}
+
+html[data-theme='dark'] {
+    --clr-light: #{$clr-light};
+    --clr-dark: #{$clr-dark};
+    --clr-main: #{$clr-main};
+    --clr-primary: #{$clr-primary};
+    --clr-secondary: #{$clr-secondary};
+    --clr-accent: #{$clr-accent};
+
+    --foreground: var(--clr-light);
+    --background: var(--clr-dark);
+}
+
+// Breakpoints
+
+$breakpoints: (
+    'sm': 576px,
+    'md': 768px,
+    'lg': 992px,
+    'xl': 1200px,
+    '2xl': 1400px
+);

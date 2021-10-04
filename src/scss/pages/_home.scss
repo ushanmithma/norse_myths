@@ -1,0 +1,68 @@
+
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+@use "sass:color";
+
+.intro {
+    width: 100%;
+    min-height: 100vh;
+    background: linear-gradient(to top, var(--background), transparent), url(../img/mauricio-carrasco-nordic-giant.webp) center / cover no-repeat;
+    position: relative;
+    
+    @include mq('lg') {
+        background: linear-gradient(to top, var(--background), transparent), url(../img/sloto-paint-viking-24-backs-213.webp) center / cover no-repeat;
+    }
+    
+    @include mq('xl') {
+        background: linear-gradient(to top, var(--background), transparent), url(../img/deiv-calviz-david-villegas-viking-deiv-calviz.webp) center / cover no-repeat;
+    }
+    
+    @include mq('2xl') {
+        background: linear-gradient(to top, var(--background), transparent), url(../img/artforgame-gamedesign-background.webp) center / cover no-repeat;
+    }
+
+    &-inner {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+    }
+}
+
+.pattern {
+    position: absolute;
+    top: 1em;
+    left: 0;
+    width: 100%;
+    height: 36px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    &-icon {
+        height: 100%;
+
+        img {
+            height: 100%;
+            padding: 0 .5em;
+            padding-inline: .5em;
+        }
+    }
+
+    &-line {
+        flex: 1 1 40%;
+        width: 100%;
+        height: 80%;
+        background-image: url(../img/nordic-pattern.svg);
+        background-repeat: repeat-x;
+        background-position: left center;
+        background-size: contain;
+    }
+
+    &-right {
+        background-position: right center;
+    }
+}

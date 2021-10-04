@@ -1,0 +1,25 @@
+
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+@use "sass:color";
+
+.intro-btn {
+    font-size: 6vw;
+    text-decoration: none;
+    color: var(--clr-dark);
+    background-color: var(--clr-main);
+    padding: .5em .75em;
+    border-radius: 7vw;
+    outline: 1px solid var(--clr-dark);
+    transition: box-shadow 200ms ease-out;
+    
+    @include mq('sm') {
+        font-size: 2em;
+    }
+    
+    &:hover,
+    &:focus {
+        box-shadow: 0 0 12px 4px color.adjust($clr-dark, $alpha: -0.6);
+    }
+}

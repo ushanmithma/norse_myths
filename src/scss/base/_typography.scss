@@ -4,8 +4,13 @@
 
 @font-face {
     font-family: "Nirmala-UI";
-    src: url("../font/Nirmala-UI.woff2") format("woff2"),
-        url("../font/Nirmala-UI.woff") format("woff");
+    src: url("../font/Nirmala-UI.eot"); /* IE9 Compat Modes */
+    src: url("../font/Nirmala-UI.eot?#iefix") format('embedded-opentype'), /* IE6-IE8 */
+        url("../font/Nirmala-UI.woff2") format("woff2"), /* Super Modern Browsers */
+        url("../font/Nirmala-UI.woff") format("woff"), /* Pretty Modern Browsers */
+        url("../font/Nirmala-UI.ttf") format("truetype"), /* Safari, Android, iOS */
+        url("../font/Nirmala-UI.otf") format("opentype"),
+        url("../font/Nirmala-UI.svg#NirmalaUI") format("svg"); /* Legacy iOS */
     font-weight: 100;
 }
 

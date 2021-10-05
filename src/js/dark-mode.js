@@ -14,16 +14,24 @@ let switchToDarkTheme = () => {
 let switchToLightTheme = () => {
 	document.documentElement.setAttribute('data-theme', 'light');
 	localStorage.setItem('theme', 'light');
+	
+	if (darkModeToggle.checked === true) {
+		darkModeToggle.checked = false;
+	}
 }
+
+if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+	switchToDarkTheme();
+}
+
+window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (event) => {
+	(event.matches) ? switchToDarkTheme() : switchToLightTheme();
+});
 
 if (theme === 'dark') {
 	switchToDarkTheme();
 }
 
 darkModeToggle.addEventListener('change', () => {
-	if (darkModeToggle.checked) {
-		switchToDarkTheme();
-	} else {
-		switchToLightTheme();
-	}
+	(darkModeToggle.checked) ? switchToDarkTheme() : switchToLightTheme();
 });

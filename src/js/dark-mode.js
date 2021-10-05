@@ -30,6 +30,8 @@ window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (ev
 
 if (theme === 'dark') {
 	switchToDarkTheme();
+} else if (theme === 'light') {
+	switchToLightTheme();
 }
 
 darkModeToggle.addEventListener('change', () => {

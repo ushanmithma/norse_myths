@@ -66,3 +66,94 @@
         background-position: right center;
     }
 }
+
+.index {
+    margin-top: 3em;
+    
+    &-title {
+        margin-top: 1em;
+        margin-bottom: 1em;
+        text-align: center;
+        
+        @include mq('sm') {
+            font-size: 3em;
+        }
+    }
+    
+    &-headings {
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+        margin-inline: auto;
+
+        @include mq('sm') {
+            width: 75%;
+        }
+    }
+
+    ol {
+        padding-left: 1.2em;
+    }
+
+    ul {
+        padding-left: 0;
+        list-style: none;
+    }
+
+    ul li:before {
+        display: inline-block;
+        width: 40px;
+        height: 40px;
+        margin-right: 0.3em;
+        content: url(../img/viking-axe.svg);
+    }
+
+    .chapter-title {
+        font-weight: 600;
+    }
+
+    .main-heading {
+        font-weight: 700;
+    }
+
+    .sub-headings {
+        margin-top: .75em;
+    }
+
+    li {
+        margin-bottom: .75em;
+    }
+
+    ol {
+        font-size: 1em;
+        
+        @include mq('sm') {
+            font-size: 1.5em;
+        }
+    }
+
+    ol ul {
+        font-size: .9em;
+    }
+
+    a {
+        color: inherit;
+        text-decoration: underline dotted;
+        transition: color 200ms ease-in;
+    }
+
+    a:hover, a:focus {
+        color: var(--clr-primary);
+        text-decoration: none;
+    }
+}
+
+.line {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+    svg {
+        max-width: 1000px;
+    }
+}

@@ -1,0 +1,29 @@
+
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+@use "sass:color";
+
+.article {
+    margin-top: 2em;
+    margin-bottom: 2em;
+    
+    h1 {
+        font-size: 1.7em;
+        margin-bottom: .5em;
+    }
+    
+    @include mq('sm') {
+        column-count: 2;
+        column-gap: 2em;
+    }
+    
+    > * {
+        line-height: 1.6;
+    }
+    
+    p {
+        font-size: 1em;
+        margin-bottom: 1em;
+    }
+}

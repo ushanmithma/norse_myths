@@ -1,4 +1,12 @@
 
+::-moz-selection {
+    background-color: var(--clr-main);
+}
+
+::selection {
+    background-color: var(--clr-main);
+}
+
 html {
     scroll-behavior: smooth;
 }

@@ -7,6 +7,10 @@
 .article {
     margin-top: 2em;
     margin-bottom: 2em;
+    -ms-user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
     
     h1 {
         font-size: 1.7em;
@@ -35,5 +39,6 @@
         padding-top: 0.5em;
         opacity: .7;
         font-weight: 700;
+        font-style: italic;
     }
 }

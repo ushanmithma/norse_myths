@@ -1,10 +1,11 @@
 
 // Colours
 
-$clr-main: #4bafaf;
+$clr-main: hsl(180, 40%, 49%);
 $clr-primary: hsl(180, 100%, 25%);
 $clr-secondary: hsl(182, 100%, 10%);
 $clr-accent: hsl(27, 100%, 91%);
+$clr-gray: hsl(0, 0%, 65%);
 $clr-light: hsl(40, 100%, 97%);
 $clr-dark: hsl(0, 0%, 11%);
 
@@ -15,7 +16,8 @@ html[data-theme='light'] {
     --clr-primary: #{$clr-primary};
     --clr-secondary: #{$clr-secondary};
     --clr-accent: #{$clr-accent};
-
+    --clr-gray: #{$clr-gray};
+    
     --foreground: var(--clr-dark);
     --background: var(--clr-light);
 }
@@ -27,6 +29,7 @@ html[data-theme='dark'] {
     --clr-primary: #{$clr-primary};
     --clr-secondary: #{$clr-secondary};
     --clr-accent: #{$clr-accent};
+    --clr-gray: #{$clr-gray};
 
     --foreground: var(--clr-light);
     --background: var(--clr-dark);

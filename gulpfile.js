@@ -2,8 +2,9 @@
 // Initizlise modules
 const {src, dest, watch, series, parallel} = require('gulp');
 const sass = require('gulp-sass')(require('sass'));
-const cssnano = require('gulp-cssnano');
-const autoprefixer = require('gulp-autoprefixer');
+const postcss = require('gulp-postcss');
+const cssnano = require('cssnano');
+const autoprefixer = require('autoprefixer');
 const sourcemaps = require('gulp-sourcemaps');
 const concat = require('gulp-concat');
 const uglify = require('gulp-uglify');
@@ -18,8 +19,7 @@ const files = {
 let sassBuild = () => {
     return src(files.scssPath)
         .pipe(sass())
-        .pipe(autoprefixer('since 2015-03-10')) // https://github.com/browserslist/browserslist#queries
-        .pipe(cssnano())
+        .pipe(postcss([ autoprefixer('since 2015-03-10'), cssnano() ]))
         .pipe(dest('./public/css'));
 }
 

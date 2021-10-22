@@ -6,3 +6,10 @@
     margin-inline: auto;
     max-width: 1200px;
 }
+
+.center-item {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

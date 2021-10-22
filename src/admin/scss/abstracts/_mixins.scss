@@ -1,0 +1,12 @@
+
+@use 'variables' as var;
+
+@mixin mq ($size) {
+
+    $breakpoint: map-get(var.$breakpoints, $size);
+    
+    @media only screen and (min-width: $breakpoint) {
+        @content;
+    }
+
+}

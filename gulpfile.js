@@ -15,6 +15,11 @@ const files = {
     jsPath: './src/js/**/*.js'
 };
 
+const adminFiles = {
+    scssPath: './src/admin/scss/**/*.scss',
+    jsPath: './src/admin/js/**/*.js'
+};
+
 // Sass tasks
 let sassBuild = () => {
     return src(files.scssPath)
@@ -53,10 +58,38 @@ let watchTask = () => {
         parallel(sassWatch, jsWatch));
 }
 
+let adminSass = () => {
+    return src(adminFiles.scssPath)
+        .pipe(sourcemaps.init())
+        .pipe(sass().on('error', sass.logError))
+        .pipe(postcss([ autoprefixer('since 2015-03-10'), cssnano() ]))
+        .pipe(sourcemaps.write('.'))
+        .pipe(dest('./public/css'));
+}
+
+let adminJs = () => {
+    return src(adminFiles.jsPath)
+        .pipe(sourcemaps.init())
+        .pipe(concat('admin.js'))
+        .pipe(uglify())
+        .pipe(sourcemaps.write('.'))
+        .pipe(dest('./public/js'));
+}
+
+let adminWatch = () => {
+    watch([adminFiles.scssPath, adminFiles.jsPath],
+        parallel(adminSass, adminJs));
+}
+
 exports.build = series(sassBuild, jsBuild);
 
 exports.watch = series(
     parallel(sassWatch, jsWatch),
     watchTask
+);
+
+exports.admin = series(
+    parallel(adminSass, adminJs),
+    adminWatch
 );
 

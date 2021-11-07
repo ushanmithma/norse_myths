@@ -2,24 +2,44 @@
   "name": "norse_myths",
   "version": "1.0.0",
   "description": "'Mythology World Fantasia - Norse Myths website'",
-  "main": "index.html",
+  "main": "server.js",
   "scripts": {
     "build": "gulp build",
     "watch": "gulp watch",
-    "admin": "gulp admin"
+    "admin": "gulp admin",
+    "start": "node server.js",
+    "devStart": "nodemon server.js"
   },
   "author": "'Mythology World - Fantasia'",
   "license": "MIT",
   "devDependencies": {
-    "autoprefixer": "^10.3.7",
-    "cssnano": "^5.0.8",
+    "autoprefixer": "^10.4.0",
+    "cssnano": "^5.0.9",
+    "dotenv": "^10.0.0",
     "gulp": "^4.0.2",
     "gulp-concat": "^2.6.1",
     "gulp-postcss": "^9.0.1",
     "gulp-sass": "^5.0.0",
     "gulp-sourcemaps": "^3.0.0",
     "gulp-uglify": "^3.0.2",
+    "nodemon": "^2.0.14",
     "postcss": "^8.3.11",
-    "sass": "^1.43.2"
+    "sass": "^1.43.4"
+  },
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "bluebird": "^3.7.2",
+    "dompurify": "^2.3.3",
+    "ejs": "^3.1.6",
+    "express": "^4.17.1",
+    "express-ejs-layouts": "^2.5.1",
+    "express-flash": "0.0.2",
+    "express-session": "^1.17.2",
+    "jsdom": "^18.0.1",
+    "method-override": "^3.0.0",
+    "mongoose": "^6.0.12",
+    "passport": "^0.5.0",
+    "passport-local": "^1.0.0",
+    "slugify": "^1.6.1"
   }
 }

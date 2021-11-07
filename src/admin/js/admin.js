@@ -8,8 +8,10 @@ let switchToDarkTheme = () => {
 	document.documentElement.setAttribute('data-theme', 'dark');
 	localStorage.setItem('theme', 'dark');
 	
-	if (darkModeToggle.checked === false) {
-		darkModeToggle.checked = true;
+	if (darkModeToggle != undefined || darkModeToggle != null) {
+		if (darkModeToggle.checked === false) {
+			darkModeToggle.checked = true;
+		}
 	}
 }
 
@@ -22,13 +24,15 @@ if (theme === 'dark') {
 	switchToDarkTheme();
 }
 
-darkModeToggle.addEventListener('change', () => {
-	if (darkModeToggle.checked) {
-		switchToDarkTheme();
-	} else {
-		switchToLightTheme();
-	}
-});
+if (darkModeToggle != undefined || darkModeToggle != null) {
+	darkModeToggle.addEventListener('change', () => {
+		if (darkModeToggle.checked) {
+			switchToDarkTheme();
+		} else {
+			switchToLightTheme();
+		}
+	});
+}
 
 // Accordion - aside sub menu controller
 
@@ -82,8 +86,25 @@ const sidemenu = document.querySelector('.sidemenu');
 const header = document.querySelector('header');
 const main = document.querySelector('main');
 
-menuIcon.addEventListener("click", function() {
-	sidemenu.classList.toggle('active');
-	header.classList.toggle('active');
-	main.classList.toggle('active');
+if (menuIcon != undefined || menuIcon != null) {
+	menuIcon.addEventListener("click", function() {
+		sidemenu.classList.toggle('active');
+		header.classList.toggle('active');
+		main.classList.toggle('active');
+	});
+}
+
+// Login page
+
+const showPW = document.querySelector('.showPW');
+
+showPW.addEventListener('click', (event) => {
+    const PWinput = document.querySelector(event.target.dataset.target);
+    if (PWinput.type === "password") {
+        PWinput.type = "text";
+        event.target.textContent = "visibility";
+    } else {
+        PWinput.type = "password";
+        event.target.textContent = "visibility_off";
+    }
 });

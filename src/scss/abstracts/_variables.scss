@@ -8,6 +8,8 @@ $clr-accent: hsl(27, 100%, 91%);
 $clr-gray: hsl(0, 0%, 65%);
 $clr-light: hsl(40, 100%, 97%);
 $clr-dark: hsl(0, 0%, 11%);
+$clr-light-neutral: rgba(255, 250, 240, 0.4);
+$clr-dark-neutral: rgba(28, 28, 28, 0.4);
 
 html[data-theme='light'] {
     --clr-light: #{$clr-light};
@@ -17,9 +19,12 @@ html[data-theme='light'] {
     --clr-secondary: #{$clr-secondary};
     --clr-accent: #{$clr-accent};
     --clr-gray: #{$clr-gray};
+    --clr-neutral: #{$clr-dark-neutral};
     
     --foreground: var(--clr-dark);
     --background: var(--clr-light);
+
+    --ff-material-icons: 'Material Icons Outlined';
 }
 
 html[data-theme='dark'] {
@@ -30,9 +35,12 @@ html[data-theme='dark'] {
     --clr-secondary: #{$clr-secondary};
     --clr-accent: #{$clr-accent};
     --clr-gray: #{$clr-gray};
+    --clr-neutral: #{$clr-light-neutral};
 
     --foreground: var(--clr-light);
     --background: var(--clr-dark);
+
+    --ff-material-icons: 'Material Icons Outlined';
 }
 
 // Breakpoints

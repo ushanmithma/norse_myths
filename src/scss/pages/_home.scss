@@ -4,6 +4,12 @@
 
 @use "sass:color";
 
+/**
+* 
+* All the home page related styles
+* 
+*/
+
 .intro {
     width: 100%;
     min-height: 100vh;
@@ -93,19 +99,17 @@
 
     ol {
         padding-left: 1.2em;
+        counter-reset: list-item;
+    }
+
+    ol > li::marker {
+        counter-increment: list-item;
+        content: counters(list-item, '.') ". ";
+        color: var(--clr-gray);
     }
 
     ul {
-        padding-left: 0;
-        list-style: none;
-    }
-
-    ul li:before {
-        display: inline-block;
-        width: 40px;
-        height: 40px;
-        margin-right: 0.3em;
-        content: url(../img/viking-axe.svg);
+        list-style-position: outside;
     }
 
     .chapter-title {
@@ -118,6 +122,28 @@
 
     .sub-headings {
         margin-top: .75em;
+    }
+    
+    ol ul.sub-headings {
+        counter-reset: list-item;
+    }
+    
+    ol ul.sub-headings > li::marker {
+        counter-increment: list-item;
+        content: counters(list-item, '.') ". ";
+        font-size: 0.75em;
+        color: var(--clr-gray);
+    }
+    
+    ul.sub-headings > .deep-headings {
+        counter-reset: list-item;
+    }
+    
+    .deep-headings > li::marker {
+        counter-increment: list-item;
+        content: counters(list-item, '.') ". ";
+        font-size: 0.75em;
+        color: var(--clr-gray);
     }
 
     li {
@@ -138,13 +164,15 @@
 
     a {
         color: inherit;
-        text-decoration: underline dotted;
+        text-decoration: none;
+        border-bottom: 1px dotted var(--clr-neutral);
+        padding-bottom: 2px;
         transition: color 200ms ease-in;
     }
 
     a:hover, a:focus {
         color: var(--clr-primary);
-        text-decoration: none;
+        border-color: var(--clr-primary);
     }
 }
 

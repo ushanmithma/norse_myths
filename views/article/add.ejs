@@ -1,0 +1,42 @@
+<section>
+    <div class="heading">
+        <h1>Add New Article</h1>
+    </div>
+    <%- include('../partials/errorMessage.ejs') %>
+    <form action="/article" method="post">
+        <div class="input-box">
+            <input type="text" name="title" id="title" class="input" value="<%= article.title %>" required>
+            <label for="title">Title</label>
+        </div>
+        <div class="input-box">
+            <input type="text" name="slug" id="slug" class="input" value="<%= article.slug %>" required>
+            <label for="slug">Slug</label>
+        </div>
+        <div class="input-box input-box--textarea">
+            <textarea name="content" id="content" class="input" rows="10" style="resize: vertical;" required><%= article.content %></textarea>
+            <label for="content">Content</label>
+        </div>
+        <div class="input-box">
+            <select name="parent" id="parent">
+                <% if (locals.parentArticles != null) { %>
+                    <option value="" label="Select Parent" disabled selected>
+                    <% parentArticles.forEach(parentArticle => { %>
+                        <% if (parentArticle.id === article.parent) { %>
+                            <option value="<%= parentArticle.id %>" label="<%= parentArticle.title %>" selected>
+                        <% } else { %>
+                            <option value="<%= parentArticle.id %>" label="<%= parentArticle.title %>">
+                        <% } %>
+                    <% }) %>
+                <% } %>
+            </select>
+            <label for="parent">Parent</label>
+        </div>
+        <div class="input-box">
+            <input type="number" name="level" id="level" class="input" value="<%= article.level %>" min="1" max="3" required>
+            <label for="level">Level</label>
+        </div>
+        <div class="input-box button">
+            <button type="submit" id="saveBtn">Save</button>
+        </div>
+    </form>
+</section>

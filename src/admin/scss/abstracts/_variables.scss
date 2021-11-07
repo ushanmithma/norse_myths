@@ -1,4 +1,28 @@
 
+html[data-theme='light'] {
+    --clr-light: #ffffff;
+    --clr-dark: #00332a;
+    --clr-primary: #ff4b2b;
+    --clr-secondary: #ff416c;
+    --clr-accent: #ED213A;
+    --clr-gray: #a6a6a6;
+
+    --foreground: var(--clr-dark);
+    --background: var(--clr-light);
+}
+
+html[data-theme='dark'] {
+    --clr-light: #b5b5b5;
+    --clr-dark: #333333;
+    --clr-primary: #004e92;
+    --clr-secondary: #000428;
+    --clr-accent: #1b1b1b;
+    --clr-gray: #a6a6a6;
+
+    --foreground: var(--clr-light);
+    --background: var(--clr-dark);
+}
+
 $breakpoints: (
     'medium': 768px,
     'large': 992px,

@@ -23,3 +23,21 @@
         box-shadow: 0 0 12px 4px color.adjust($clr-dark, $alpha: -0.6);
     }
 }
+
+.go-back-btn {
+    border: none;
+    text-decoration: none;
+    font-size: 1em;
+    background-color: var(--foreground);
+    color: var(--background);
+    padding: .375em .75em;
+    border-radius: .25em;
+    font-weight: 600;
+    transition: all 200ms ease-out;
+
+    &:hover,
+    &:active,
+    &:focus {
+        background-color: var(--clr-gray);
+    }
+}

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+    <head>
+    <meta charset="UTF-8">
+    <meta name="description" content="<%= overview %>">
+    <meta name="keywords" content="norse mythology, නෝර්වීජියානු මිත්‍යා කතා, නෝර්වීජියානු පුරාවෘත්ත, ස්කැන්ඩිනේවියානු මිත්‍යා කතා, ස්කැන්ඩිනේවියානු පුරාවෘත්ත, nodic, viking">
+    <meta name="author" content="Mythology World - Fantasia">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="HandheldFriendly" content="True" />
+    <link rel="canonical" href="<%= base_url %>">
+    <link rel="alternate" href="<%= base_url %>" hreflang="x-default" />
+    <meta name="robots" content="index, follow" />
+    <meta name="referrer" content="no-referrer-when-downgrade" />
+    <title><%= title %></title>
+    <!-- Favicons for Android, iPhone and others -->
+    <link rel="shortcut icon" sizes="16x16 24x24 32x32 48x48 64x64" href="/img/favicons/favicon.ico">
+    <link rel="shortcut icon" href="/img/favicons/favicon.ico">
+    <link rel="icon" type="image/vnd.microsoft.icon" href="/img/favicons/favicon.ico">
+    <link rel="icon" type="image/x-icon" href="/img/favicons/favicon.ico">
+    <link rel="icon" href="/img/favicons/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="57x57" href="/img/favicons/favicon-57.png">
+    <link rel="apple-touch-icon-precomposed" sizes="57x57" href="/img/favicons/favicon-57.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/img/favicons/favicon-120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/img/favicons/favicon-144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/img/favicons/favicon-152.png">
+    <link rel="apple-touch-icon" sizes="167x167" href="/img/favicons/favicon-167.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/img/favicons/favicon-180.png">
+    <link rel="icon" sizes="192x192" href="/img/favicons/favicon-192.png">
+    <link rel="icon" sizes="196x196" href="/img/favicons/favicon-196.png">
+    <link rel="icon" sizes="512x512" href="/img/favicons/favicon-512.png">
+    <link rel="icon" type="image/png" sizes="128x128" href="/img/favicons/favicon-128.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/img/favicons/favicon-32.png">
+    <!-- iOS Settings -->
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta name="apple-mobile-web-app-status-bar-style" content="#4bafaf">
+    <!-- Favicon for Windows 8 Tile | Windows 8 IE 10 -->
+    <meta name="application-name" content="<%= title %>">
+    <meta name="msapplication-tooltip" content="<%= overview %>">
+    <meta name="msapplication-TileImage" content="/img/favicons/favicon-144.png">
+    <meta name="msapplication-TileColor" content="#4bafaf">
+    <meta name="theme-color" content="#4bafaf">
+    <meta name="msapplication-navbutton-color" content="#4bafaf">
+    <!-- Windows 8.1 + IE11 and above -->
+    <meta name="msapplication-config" content="/img/favicons/ieconfig.xml">
+    <!-- Open Graph QL Tags -->
+    <meta property="og:site_name" content="<%= title %>" />
+    <meta property="og:type" content="<%= og_type %>" />
+    <meta property="og:title" content="<%= title %>" />
+    <meta property="og:description" content="<%= og_description %>" />
+    <meta property="og:url" content="<%= base_url %>" />
+    <meta property="og:image" content="/img/preview.jpg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="<%= title %>" />
+    <meta name="twitter:description" content="<%= og_description %>" />
+    <meta name="twitter:url" content="<%= base_url %>" />
+    <meta name="twitter:image" content="/img/preview.jpg" />
+    <meta name="twitter:site" content="@MythologyWorld1" />
+    <meta name="twitter:creator" content="@MythologyWorld1" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="628" />
+    <meta name="google" content="notranslate">
+    <!-- Google Fonts & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Sinhala:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Icons+Outlined" rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <div class="change-theme">
+        <label class="toggle-switch">
+            <input type="checkbox" id="darkModeToggle">
+            <span class="theme-icon"></span>
+        </label>
+    </div>
+    <%- body %>
+    <script src="/js/script.js"></script>
+</body>
+</html>

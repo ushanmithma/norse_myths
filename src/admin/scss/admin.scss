@@ -4,33 +4,15 @@
 
 @use './base/reset';
 
+@use 'pages/login';
+
+@use 'utilities/containers';
+
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-}
-
-html[data-theme='light'] {
-    --clr-light: #ffffff;
-    --clr-dark: #00332a;
-    --clr-primary: #ff4b2b;
-    --clr-secondary: #ff416c;
-    --clr-accent: #ED213A;
-
-    --foreground: var(--clr-dark);
-    --background: var(--clr-light);
-}
-
-html[data-theme='dark'] {
-    --clr-light: #b5b5b5;
-    --clr-dark: #333333;
-    --clr-primary: #004e92;
-    --clr-secondary: #000428;
-    --clr-accent: #1b1b1b;
-
-    --foreground: var(--clr-light);
-    --background: var(--clr-dark);
 }
 
 body {
@@ -369,10 +351,18 @@ header .user {
             right: 0;
             z-index: 1;
             
-            a {
+            a, button {
                 color: var(--clr-light);
                 display: block;
                 padding: 0.75em 0.6em;
+            }
+
+            button {
+                width: 100%;
+                text-align-last: left;
+                background-color: transparent;
+                border: none;
+                cursor: pointer;
             }
 
             a span {
@@ -384,7 +374,9 @@ header .user {
             }
 
             a:hover,
-            a:focus {
+            a:focus,
+            button:hover,
+            button:focus {
                 background-color: var(--clr-accent);
             }
         }
@@ -567,8 +559,9 @@ aside ul a:hover {
 main {
     width: 100%;
     transition: transform 0.2s ease-in-out;
-
+    
     @include mx.mq ('medium') {
+        width: calc(100% - 250px);
         transform: translateX(250px);
     }
 }

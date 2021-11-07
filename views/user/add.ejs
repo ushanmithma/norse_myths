@@ -1,0 +1,23 @@
+<section>
+    <div class="heading">
+        <h1>Add New User</h1>
+    </div>
+    <form action="/admin/user" method="post">
+        <div class="input-box">
+            <input type="text" name="name" id="" class="input" value="<%= user.name %>" required>
+            <label for="">Name</label>
+        </div>
+        <div class="input-box">
+            <input type="email" name="email" id="" class="input" value="<%= user.email %>" required>
+            <label for="">Email</label>
+        </div>
+        <div class="input-box">
+            <input type="password" name="password" id="password" class="input" value="<%= user.password %>" required>
+            <label for="">Password</label>
+            <span class="material-icons showPW" data-target="#password">visibility_off</span>
+        </div>
+        <div class="input-box button">
+            <button type="submit" id="saveBtn">Save</button>
+        </div>
+    </form>
+</section>

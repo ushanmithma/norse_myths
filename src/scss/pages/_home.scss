@@ -170,7 +170,7 @@
         transition: color 200ms ease-in;
     }
 
-    a:hover, a:focus {
+    a:active, a:hover, a:focus {
         color: var(--clr-primary);
         border-color: var(--clr-primary);
     }
@@ -183,5 +183,98 @@
 
     svg {
         max-width: 1000px;
+    }
+}
+
+.before-foo {
+    position: relative;
+}
+
+.foo {
+    margin-top: 6em;
+    margin-bottom: 2em;
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+
+    @include mq('lg') {
+        flex-direction: row;
+        align-items: center;
+
+        > * {
+            flex-basis: calc(33.3% - calc(calc(2em * 2) / 3));
+        }
+    }
+
+    &__nav {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 2em;
+
+        @include mq('lg') {
+            align-items: flex-start;
+            gap: 1em;
+        }
+    }
+
+    &__cpy {
+        color: var(--clr-gray);
+    }
+
+    &__logo {
+        max-width: 224px;
+    }
+
+    &__social-links {
+        padding: 0;
+        margin: 0;
+        list-style: none;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__social-link {
+        width: 40px;
+        height: 40px;
+    }
+    
+    &__social-link a {
+        text-decoration: none;
+    }
+    
+    &__social-link a svg {
+        transition: all 200ms ease;
+        fill: var(--clr-gray);
+    }
+    
+    &__social-link a:active svg,
+    &__social-link a:hover svg,
+    &__social-link a:focus svg {
+        fill: var(--clr-primary);
+    }
+
+    &__disclaimer-list {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 1em;
+    }
+
+    &__disclaimer a {
+        color: var(--clr-gray);
+        text-decoration: none;
+        border-bottom: 1px dotted var(--clr-gray);
+        padding-bottom: 2px;
+        transition: color 200ms ease-in;
+    }
+    
+    &__disclaimer a:active,
+    &__disclaimer a:hover,
+    &__disclaimer a:focus {
+        color: var(--clr-primary);
+        border-color: var(--clr-primary);
     }
 }

@@ -36,7 +36,7 @@ router.get('/', async (req, res) => {
         res.render('index', {
             title: "නෝර්වීජියානු මිත්‍යා කතා - Mythology World Fantasia",
             overview: "Norse Mythology - නෝර්වීජියානු මිත්‍යා කතා, සුද්ද සිංහලෙන් කියවන්න",
-            base_url: req.headers.origin,
+            base_url: req.protocol + "://" + req.hostname + req.originalUrl,
             og_type: "website",
             og_description: "නෝර්වීජියානු / ස්කැන්ඩිනේවියානු පුරාවෘත්ත, සුද්ද සිංහලෙන් කියවන්න",
             articles: articles

@@ -69,10 +69,9 @@ app.use((req, res, next) => {
         res.render('404', {
             title: "404 Page Not Found | Norse Mythology - නෝර්වීජියානු මිත්‍යා කතා",
             overview: "Norse Mythology - නෝර්වීජියානු මිත්‍යා කතා, සුද්ද සිංහලෙන් කියවන්න",
-            base_url: req.headers.origin,
+            base_url: req.protocol + "://" + req.hostname + req.url,
             og_type: "website",
-            og_description: "නෝර්වීජියානු / ස්කැන්ඩිනේවියානු පුරාවෘත්ත, සුද්ද සිංහලෙන් කියවන්න",
-            url: req.url
+            og_description: "නෝර්වීජියානු / ස්කැන්ඩිනේවියානු පුරාවෘත්ත, සුද්ද සිංහලෙන් කියවන්න"
         });
         return;
     }

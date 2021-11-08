@@ -21,9 +21,9 @@ router.get('/:slug', async (req, res) => {
     const article = await Article.findOne({ slug: req.params.slug });
     if (article == null) res.redirect('/');
     res.render('article/show', {
-        title: `${article.title} | Norse Mythology - නෝර්වීජියානු මිත්‍යා කතා`,
+        title: article.title + " | Norse Mythology - නෝර්වීජියානු මිත්‍යා කතා",
         overview: "Norse Mythology - නෝර්වීජියානු මිත්‍යා කතා, සුද්ද සිංහලෙන් කියවන්න",
-        base_url: req.baseUrl,
+        base_url: req.headers.origin,
         og_type: "website",
         og_description: "නෝර්වීජියානු / ස්කැන්ඩිනේවියානු පුරාවෘත්ත, සුද්ද සිංහලෙන් කියවන්න",
         article: article

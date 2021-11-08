@@ -58,6 +58,7 @@ let watchTask = () => {
         parallel(sassWatch, jsWatch));
 }
 
+// Admin functions
 let adminSass = () => {
     return src(adminFiles.scssPath)
         .pipe(sourcemaps.init())

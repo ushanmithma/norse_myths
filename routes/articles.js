@@ -11,7 +11,14 @@ app.use(passport.session());
 router.get('/new', checkAuthenticated, async (req, res) => {
     try {
         const articles = await Article.find({level: {$in: [1, 2]}});
-        res.render('article/add', { layout: 'layouts/admin', title: 'Add Article', name: req.user.name, article: new Article(), parentArticles: articles });
+        res.render('article/create', {
+            layout: 'layouts/admin',
+            title: 'Create Article',
+            name: req.user.name,
+            action: 'create',
+            article: new Article(),
+            parentArticles: articles
+        });
     } catch {
         res.redirect('/admin/dashboard');
     }
@@ -42,14 +49,58 @@ router.post('/', checkAuthenticated, async (req, res) => {
         article = await article.save();
         res.redirect(`/article/${article.slug}`);
     } catch(e) {
-        console.log(e);
-        res.render('article/add', {
+        res.render('article/create', {
             layout: 'layouts/admin',
-            title: 'Add Article',
+            title: 'Create Article',
             name: req.user.name,
+            action: 'create',
             article: article,
             errorMessage: 'Error creating article!'
         });
+    }
+});
+
+router.get('/:id/edit', checkAuthenticated, async (req, res) => {
+    try {
+        const parents = await Article.find({level: {$in: [1, 2]}, _id: {$ne: req.params.id}});
+        const article = await Article.findById(req.params.id);
+        res.render('article/create', {
+            layout: 'layouts/admin',
+            title: 'Edit Article',
+            name: req.user.name,
+            action: 'edit',
+            article: article,
+            parentArticles: parents
+        });
+    } catch {
+        res.redirect('/admin/dashboard');
+    }
+});
+
+router.put('/:id', checkAuthenticated, async (req, res) => {
+    let article;
+    try {
+        article = await Article.findById(req.params.id);
+        article.title = req.body.title;
+        article.content = req.body.content;
+        article.slug = req.body.slug;
+        article.parent = req.body.parent;
+        article.level = req.body.level;
+        await article.save();
+        res.redirect(`/article/${article.slug}`);
+    } catch(e) {
+        if (article == null) {
+            res.redirect('/admin/dashboard');
+        } else {
+            res.render('article/create', {
+                layout: 'layouts/admin',
+                title: 'Edit Article',
+                name: req.user.name,
+                action: 'edit',
+                article: article,
+                errorMessage: 'Error updating article!'
+            });
+        }
     }
 });
 

@@ -4,7 +4,7 @@
   "description": "'Mythology World Fantasia - Norse Myths website'",
   "main": "server.js",
   "engines": {
-    "node": "16.x"
+    "node": "18.x"
   },
   "scripts": {
     "build": "gulp build",

@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "'Mythology World Fantasia - Norse Myths website'",
   "main": "server.js",
+  "engines": {
+    "node": "16.x"
+  },
   "scripts": {
     "build": "gulp build",
     "watch": "gulp watch",

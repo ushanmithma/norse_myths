@@ -6,6 +6,7 @@
   "engines": {
     "node": "18.x"
   },
+  "type": "module",
   "scripts": {
     "build": "gulp build",
     "watch": "gulp watch",
